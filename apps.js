@@ -15,21 +15,6 @@
 window.HUB_TITLE = "กล่องเครื่องมือของฉัน";
 
 window.APPS = [
-  {
-    name: "เครื่องคิดเลข",
-    desc: "ตัวอย่างไฟล์ html ที่อยู่ในรีโพเดียวกัน",
-    url: "apps/calculator.html",
-    icon: "🧮",
-    category: "ตัวอย่าง",
-    embed: true,
-  },
-  {
-    name: "เว็บตัวอย่างภายนอก",
-    desc: "ตัวอย่างลิงก์เว็บที่โฮสต์ที่อื่น เปิดในแท็บใหม่",
-    url: "https://example.com",
-    icon: "🔗",
-    category: "ตัวอย่าง",
-  },
   // เพิ่มเครื่องมือของคุณต่อด้านล่างนี้ ↓
   {
   name: "EXPENSE",
@@ -53,7 +38,6 @@ window.APPS = [
     url: "https://ppbbeiei.my.canva.site/chs9bapvyanngd0a",
     icon: "📏",
     category: "work",
-    embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
   {
     name: "Home Buy List",
@@ -61,7 +45,6 @@ window.APPS = [
     url: "https://ppbbeiei.my.canva.site/home-buy-list",
     icon: "📏",
     category: "MONEY",
-    embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
   {
     name: "เครื่องคิดเลขงานตรวจแบบ",
@@ -69,6 +52,5 @@ window.APPS = [
     url: "https://script.google.com/macros/s/AKfycbxnicY7UHL4GSdiYhPqNib3VJy5M7psNEexVtULq9dO0fIsmBbzKv07ju-EeJ2F0bZC/exec",
     icon: "📏",
     category: "MONEY",
-    embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
 ];
