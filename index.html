@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>กล่องเครื่องมือของฉัน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #e9edf1;
+    --panel: #f6f8fa;
+    --ink: #17212b;
+    --muted: #596675;
+    --line: #c9d1d9;
+    --accent: #2447e0;
+    --accent-ink: #ffffff;
+    --chip: #dbe1e8;
+    --focus: #2447e0;
+    --font: "IBM Plex Sans Thai", "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12171d;
+      --panel: #1b222a;
+      --ink: #e7ecf1;
+      --muted: #9aa7b5;
+      --line: #313b46;
+      --accent: #7f9bff;
+      --accent-ink: #0d1320;
+      --chip: #262f39;
+      --focus: #9fb4ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12171d; --panel: #1b222a; --ink: #e7ecf1; --muted: #9aa7b5;
+    --line: #313b46; --accent: #7f9bff; --accent-ink: #0d1320; --chip: #262f39; --focus: #9fb4ff;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 40px 20px 64px; }
+
+  header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 28px;
+  }
+  h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  .count { color: var(--muted); margin: 6px 0 0; font-size: 0.95rem; }
+  .theme-btn {
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    border-radius: 8px; padding: 8px 12px; font: inherit; cursor: pointer;
+  }
+
+  .controls { display: flex; flex-direction: column; gap: 14px; margin-bottom: 26px; }
+  .search {
+    width: 100%; font: inherit; color: var(--ink);
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 12px 14px;
+  }
+  .search::placeholder { color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font: inherit; font-size: 0.9rem; cursor: pointer;
+    border: 1px solid transparent; background: var(--chip); color: var(--ink);
+    border-radius: 999px; padding: 6px 14px;
+  }
+  .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+
+  .grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+  .card {
+    display: flex; flex-direction: column; gap: 6px;
+    text-align: left; font: inherit; color: inherit; text-decoration: none; cursor: pointer;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px; min-height: 140px;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .icon {
+    width: 46px; height: 46px; border-radius: 10px; background: var(--chip);
+    display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 6px;
+  }
+  .name { font-weight: 600; font-size: 1.08rem; }
+  .desc { color: var(--muted); font-size: 0.92rem; flex: 1; }
+  .meta { color: var(--muted); font-size: 0.8rem; }
+
+  .empty {
+    grid-column: 1 / -1; text-align: center; color: var(--muted);
+    border: 1px dashed var(--line); border-radius: 12px; padding: 40px 16px;
+  }
+
+  /* viewer for embedded apps */
+  .viewer { position: fixed; inset: 0; background: var(--bg); display: none; flex-direction: column; z-index: 10; }
+  .viewer.open { display: flex; }
+  .bar {
+    display: flex; align-items: center; gap: 10px; padding: 10px 14px;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+  }
+  .bar .title { font-weight: 600; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .btn {
+    font: inherit; font-size: 0.92rem; cursor: pointer; text-decoration: none;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+    border-radius: 8px; padding: 6px 12px;
+  }
+  .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1 id="title">กล่องเครื่องมือของฉัน</h1>
+      <p class="count" id="count"></p>
+    </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="สลับโหมดสว่าง/มืด">🌓 โหมดสี</button>
+  </header>
+
+  <div class="controls">
+    <input class="search" id="search" type="search" placeholder="ค้นหาเครื่องมือ…" aria-label="ค้นหาเครื่องมือ">
+    <div class="chips" id="chips" role="group" aria-label="กรองตามหมวดหมู่"></div>
+  </div>
+
+  <main class="grid" id="grid"></main>
+</div>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="เครื่องมือที่เปิดอยู่">
+  <div class="bar">
+    <button class="btn" id="back" type="button">← กลับหน้ารวม</button>
+    <span class="title" id="viewerTitle"></span>
+    <a class="btn primary" id="openTab" target="_blank" rel="noopener">เปิดแท็บใหม่</a>
+  </div>
+  <iframe id="frame" title="เครื่องมือ" allow="clipboard-read; clipboard-write; fullscreen"></iframe>
+</div>
+
+<script src="apps.js"></script>
+<script>
+(function () {
+  var apps = Array.isArray(window.APPS) ? window.APPS : [];
+  var ALL = "ทั้งหมด";
+  var state = { q: "", cat: ALL };
+
+  var $ = function (id) { return document.getElementById(id); };
+  var grid = $("grid"), chips = $("chips"), count = $("count");
+
+  if (window.HUB_TITLE) { $("title").textContent = window.HUB_TITLE; document.title = window.HUB_TITLE; }
+
+  function categories() {
+    var set = {};
+    apps.forEach(function (a) { if (a.category) set[a.category] = true; });
+    return [ALL].concat(Object.keys(set));
+  }
+
+  function renderChips() {
+    chips.innerHTML = "";
+    var cats = categories();
+    if (cats.length <= 2) { chips.style.display = "none"; return; }
+    cats.forEach(function (c) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.textContent = c;
+      b.setAttribute("aria-pressed", String(c === state.cat));
+      b.onclick = function () { state.cat = c; renderChips(); renderGrid(); };
+      chips.appendChild(b);
+    });
+  }
+
+  function matches(a) {
+    if (state.cat !== ALL && a.category !== state.cat) return false;
+    if (!state.q) return true;
+    var hay = ((a.name || "") + " " + (a.desc || "") + " " + (a.category || "")).toLowerCase();
+    return hay.indexOf(state.q.toLowerCase()) !== -1;
+  }
+
+  function card(a) {
+    var isEmbed = !!a.embed;
+    var el = document.createElement(isEmbed ? "button" : "a");
+    el.className = "card";
+    if (isEmbed) { el.type = "button"; el.onclick = function () { openViewer(a); }; }
+    else { el.href = a.url; el.target = "_blank"; el.rel = "noopener"; }
+
+    var icon = document.createElement("div"); icon.className = "icon"; icon.textContent = a.icon || "🧰";
+    var name = document.createElement("div"); name.className = "name"; name.textContent = a.name || a.url;
+    var desc = document.createElement("div"); desc.className = "desc"; desc.textContent = a.desc || "";
+    var meta = document.createElement("div"); meta.className = "meta";
+    meta.textContent = (a.category ? a.category + " · " : "") + (isEmbed ? "เปิดในหน้านี้" : "เปิดแท็บใหม่");
+    el.appendChild(icon); el.appendChild(name); el.appendChild(desc); el.appendChild(meta);
+    return el;
+  }
+
+  function renderGrid() {
+    grid.innerHTML = "";
+    var list = apps.filter(matches);
+    count.textContent = list.length === apps.length
+      ? apps.length + " เครื่องมือ"
+      : "พบ " + list.length + " จาก " + apps.length + " เครื่องมือ";
+    if (!list.length) {
+      var e = document.createElement("div"); e.className = "empty";
+      e.textContent = apps.length ? "ไม่พบเครื่องมือที่ตรงกับคำค้น ลองเปลี่ยนคำหรือหมวดหมู่" : "ยังไม่มีเครื่องมือ เพิ่มรายการในไฟล์ apps.js";
+      grid.appendChild(e); return;
+    }
+    list.forEach(function (a) { grid.appendChild(card(a)); });
+  }
+
+  /* viewer */
+  var viewer = $("viewer"), frame = $("frame");
+  function openViewer(a) {
+    $("viewerTitle").textContent = (a.icon ? a.icon + " " : "") + (a.name || "");
+    $("openTab").href = a.url;
+    frame.src = a.url;
+    viewer.classList.add("open");
+    $("back").focus();
+  }
+  function closeViewer() { viewer.classList.remove("open"); frame.src = "about:blank"; }
+  $("back").onclick = closeViewer;
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && viewer.classList.contains("open")) closeViewer(); });
+
+  /* search */
+  $("search").addEventListener("input", function (e) { state.q = e.target.value.trim(); renderGrid(); });
+
+  /* theme toggle */
+  var root = document.documentElement;
+  try { var saved = localStorage.getItem("hub-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  $("themeBtn").onclick = function () {
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("hub-theme", next); } catch (e) {}
+  };
+
+  renderChips();
+  renderGrid();
+})();
+</script>
+</body>
+</html>

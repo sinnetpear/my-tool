@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>เครื่องคิดเลข</title>
+<style>
+body{font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#f3f4f6}
+.c{width:260px;display:grid;gap:8px}
+input{font-size:1.6rem;padding:10px;text-align:right}
+.k{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+button{font-size:1.2rem;padding:12px;cursor:pointer}
+</style></head><body>
+<div class="c"><input id="d" readonly value="0"><div class="k" id="k"></div></div>
+<script>
+var d=document.getElementById("d"),k=document.getElementById("k"),s="";
+"7 8 9 / 4 5 6 * 1 2 3 - 0 . = +".split(" ").concat(["C"]).forEach(function(t){
+  var b=document.createElement("button");b.textContent=t;
+  b.onclick=function(){
+    if(t==="C"){s="";}
+    else if(t==="="){try{s=String(Function('"use strict";return ('+s+')')());}catch(e){s="";}}
+    else{s+=t;}
+    d.value=s||"0";
+  };k.appendChild(b);
+});
+</script></body></html>
