@@ -38,5 +38,5 @@ window.APPS = [
   icon: "🛠️",
   category: "MONEY",
   embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
-},
+  },
 ];
