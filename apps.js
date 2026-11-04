@@ -39,7 +39,7 @@ window.APPS = [
   category: "MONEY",
   embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
-    {
+  {
     name: "วันลา",
     desc: "บันทึกวันลา",
     url: "https://sinnetpear.github.io/wanla/",
@@ -47,7 +47,7 @@ window.APPS = [
     category: "work",
     embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
-    {
+  {
     name: "ใบเสนอราคา",
     desc: "ใบเสนอราคางานเขียนแบบ",
     url: "https://ppbbeiei.my.canva.site/chs9bapvyanngd0a",
@@ -55,7 +55,7 @@ window.APPS = [
     category: "work",
     embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
-    {
+  {
     name: "Home Buy List",
     desc: "สิ่งของที่ซื้อในบ้าน พร้อม งบ",
     url: "https://ppbbeiei.my.canva.site/home-buy-list",
@@ -63,7 +63,7 @@ window.APPS = [
     category: "MONEY",
     embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
-    {
+  {
     name: "เครื่องคิดเลขงานตรวจแบบ",
     desc: "พื้นที่ ที่ว่าง เครื่องคิดเลข",
     url: "https://script.google.com/macros/s/AKfycbxnicY7UHL4GSdiYhPqNib3VJy5M7psNEexVtULq9dO0fIsmBbzKv07ju-EeJ2F0bZC/exec",
