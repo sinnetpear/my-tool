@@ -32,6 +32,13 @@ window.APPS = [
   category: "MONEY",
   },
   {
+  name: "ค่าธรรมเนียม",
+  desc: "คิดค่าธรรมเนียมขออนุญาตก่อสร้าง",
+  url: "https://script.google.com/macros/s/AKfycbzdO8bJLkQwlWuNfdpsLyZBfhsUwAryBt2IOwDr8i4dKJgxMQX17iadfQSIr9kIOM_b8Q/exec",   // หรือ "apps/ไฟล์ของฉัน.html"
+  icon: "🛠️",
+  category: "work",
+  },
+  {
     name: "วันลา",
     desc: "บันทึกวันลา",
     url: "https://sinnetpear.github.io/wanla/",
