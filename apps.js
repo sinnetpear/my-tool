@@ -51,6 +51,6 @@ window.APPS = [
     desc: "พื้นที่ ที่ว่าง เครื่องคิดเลข",
     url: "https://script.google.com/macros/s/AKfycbxnicY7UHL4GSdiYhPqNib3VJy5M7psNEexVtULq9dO0fIsmBbzKv07ju-EeJ2F0bZC/exec",
     icon: "📏",
-    category: "MONEY",
+    category: "work",
   },
 ];
