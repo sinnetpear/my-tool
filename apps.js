@@ -40,6 +40,14 @@ window.APPS = [
     category: "work",
   },
   {
+    name: "calculator normal",
+    desc: "test",
+    url: "apps/calculator.html",
+    icon: "📅",
+    category: "จัดการงาน",
+    embed: true,
+  },
+  {
     name: "Home Buy List",
     desc: "สิ่งของที่ซื้อในบ้าน พร้อม งบ",
     url: "https://ppbbeiei.my.canva.site/home-buy-list",
