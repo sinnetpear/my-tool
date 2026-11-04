@@ -31,4 +31,12 @@ window.APPS = [
     category: "ตัวอย่าง",
   },
   // เพิ่มเครื่องมือของคุณต่อด้านล่างนี้ ↓
+  {
+  name: "EXPENSE",
+  desc: "รายรับรายจ่าย",
+  url: "https://sinnetpear.github.io/my-expense-app/",   // หรือ "apps/ไฟล์ของฉัน.html"
+  icon: "🛠️",
+  category: "MONEY",
+  embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
+},
 ];
