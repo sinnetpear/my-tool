@@ -25,6 +25,13 @@ window.APPS = [
   embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
   {
+  name: "จดหนี้",
+  desc: "จดหนี้ กับการจ่ายแต่ละรอบ",
+  url: "https://trackxx.my.canva.site/moneycheck/",   // หรือ "apps/ไฟล์ของฉัน.html"
+  icon: "🛠️",
+  category: "MONEY",
+  },
+  {
     name: "วันลา",
     desc: "บันทึกวันลา",
     url: "https://sinnetpear.github.io/wanla/",
