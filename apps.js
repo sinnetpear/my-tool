@@ -22,7 +22,6 @@ window.APPS = [
   url: "https://sinnetpear.github.io/my-expense-app/",   // หรือ "apps/ไฟล์ของฉัน.html"
   icon: "🛠️",
   category: "MONEY",
-  embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
   {
   name: "จดหนี้",
@@ -38,13 +37,19 @@ window.APPS = [
   icon: "🛠️",
   category: "work",
   },
+    {
+  name: "Weight",
+  desc: "บันทึกน้ำหนัก",
+  url: "https://ppbbeiei.my.canva.site/",   // หรือ "apps/ไฟล์ของฉัน.html"
+  icon: "🛠️",
+  category: "life",
+  },
   {
     name: "วันลา",
     desc: "บันทึกวันลา",
     url: "https://sinnetpear.github.io/wanla/",
     icon: "📏",
     category: "work",
-    embed: true,                  // ใส่เฉพาะถ้าอยากเปิดในหน้า hub เอง
   },
   {
     name: "ใบเสนอราคา",
@@ -59,7 +64,6 @@ window.APPS = [
     url: "apps/calculator.html",
     icon: "📅",
     category: "จัดการงาน",
-    embed: true,
   },
   {
     name: "Home Buy List",
